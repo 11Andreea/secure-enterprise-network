@@ -1,6 +1,4 @@
-````md
-
-\# IP Addressing
+# IP Addressing
 
 
 
@@ -12,7 +10,7 @@ The internal network uses the private `10.0.0.0/8` address space.
 
 
 
-\## IP Addressing Scheme
+## IP Addressing Scheme
 
 
 
@@ -21,22 +19,15 @@ Each VLAN is assigned a `/24` subnet. The first usable address in each subnet is
 
 
 | VLAN | Name | Subnet | Gateway | Usable Address Range | Broadcast |
-
 |------|------|--------|---------|----------------------|-----------|
-
-| 10 | MANAGEMENT | 10.10.0.0/24 | 10.10.0.1 | 10.10.0.2 – 10.10.0.254 | 10.10.0.255 |
-
-| 20 | USERS | 10.20.0.0/24 | 10.20.0.1 | 10.20.0.2 – 10.20.0.254 | 10.20.0.255 |
-
-| 30 | SERVERS | 10.30.0.0/24 | 10.30.0.1 | 10.30.0.2 – 10.30.0.254 | 10.30.0.255 |
-
-| 40 | GUEST | 10.40.0.0/24 | 10.40.0.1 | 10.40.0.2 – 10.40.0.254 | 10.40.0.255 |
-
-| 50 | IOT | 10.50.0.0/24 | 10.50.0.1 | 10.50.0.2 – 10.50.0.254 | 10.50.0.255 |
-
-| 60 | SECURITY | 10.60.0.0/24 | 10.60.0.1 | 10.60.0.2 – 10.60.0.254 | 10.60.0.255 |
-
-| 99 | NATIVE | 10.99.0.0/24 | 10.99.0.1 | 10.99.0.2 – 10.99.0.254 | 10.99.0.255 |
+| 10 | ADMIN | `10.10.10.0/24` | `10.10.10.1` | `10.10.10.2 – 10.10.10.254` | `10.10.10.255` |
+| 20 | IT | `10.10.20.0/24` | `10.10.20.1` | `10.10.20.2 – 10.10.20.254` | `10.10.20.255` |
+| 30 | USERS | `10.10.30.0/24` | `10.10.30.1` | `10.10.30.2 – 10.10.30.254` | `10.10.30.255` |
+| 40 | SERVERS | `10.10.40.0/24` | `10.10.40.1` | `10.10.40.2 – 10.10.40.254` | `10.10.40.255` |
+| 50 | GUEST | `10.10.50.0/24` | `10.10.50.1` | `10.10.50.2 – 10.10.50.254` | `10.10.50.255` |
+| 60 | DMZ | `10.10.60.0/24` | `10.10.60.1` | `10.10.60.2 – 10.10.60.254` | `10.10.60.255` |
+| 99 | MANAGEMENT | `10.10.99.0/24` | `10.10.99.1` | `10.10.99.2 – 10.10.99.254` | `10.10.99.255` |
+| 999 | UNUSED | N/A | N/A | N/A | N/A |
 
 
 
@@ -64,7 +55,7 @@ or, in CIDR notation:
 
 
 
-\## Addressing Structure
+## Addressing Structure
 
 
 
@@ -112,7 +103,7 @@ This structure makes the network easier to manage and allows administrators to q
 
 
 
-\## Gateway Addresses
+## Gateway Addresses
 
 
 
@@ -144,7 +135,7 @@ Devices belonging to each VLAN will use the corresponding gateway address when c
 
 
 
-\## Reserved Address Ranges
+## Reserved Address Ranges
 
 
 
@@ -171,8 +162,7 @@ The proposed structure is:
 This separation prevents conflicts between statically configured devices and dynamically assigned addresses.
 
 
-
-\## Network Device Addressing
+## Network Device Addressing
 
 
 
@@ -208,7 +198,7 @@ These addresses act as the default gateways for the corresponding VLANs.
 
 
 
-\## End Device Addressing
+## End Device Addressing
 
 
 
@@ -252,7 +242,7 @@ Devices that require stable and predictable addresses, such as servers and netwo
 
 
 
-\## Addressing Verification
+## Addressing Verification
 
 
 
@@ -272,13 +262,13 @@ This command displays:
 
 
 
-\* Interface name
+* Interface name
 
-\* IP address
+* IP address
 
-\* Interface status
+* Interface status
 
-\* Protocol status
+* Protocol status
 
 
 
@@ -286,7 +276,7 @@ The output should show the configured interfaces with their corresponding IP add
 
 
 
-\## Connectivity Testing
+## Connectivity Testing
 
 
 
@@ -342,7 +332,7 @@ ping 10.99.0.1
 
 
 
-\## Addressing Validation
+## Addressing Validation
 
 
 
@@ -350,29 +340,24 @@ The IP addressing configuration is considered correct when:
 
 
 
-\* Each VLAN has its own dedicated subnet.
+* Each VLAN has its own dedicated subnet.
 
-\* Each subnet uses the correct `/24` mask.
+* Each subnet uses the correct `/24` mask.
 
-\* Each VLAN has a unique default gateway.
+* Each VLAN has a unique default gateway.
 
-\* End devices have addresses belonging to their assigned VLAN subnet.
+* End devices have addresses belonging to their assigned VLAN subnet.
 
-\* Static addresses do not overlap with the DHCP address range.
+* Static addresses do not overlap with the DHCP address range.
 
-\* Devices can reach their local gateway.
+* Devices can reach their local gateway.
 
-\* The network interfaces show the expected operational status.
+* The network interfaces show the expected operational status.
 
 
 
 The resulting addressing scheme provides a structured foundation for the rest of the network configuration, including routing, DHCP, access control, and security policies.
 
-
-
-```
-
-```
 
 
 
