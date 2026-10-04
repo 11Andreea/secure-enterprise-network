@@ -83,13 +83,14 @@ The network is divided into several logical segments:
 - [x] ACL implementation
 - [x] Harden network devices
 - [x] Syslog
+- [x] NAT configuration
+- [x] DMZ services
+- [x] Firewall configuration
 
 ### In Progress
 
-- [ ] Firewall configuration
+
 - [ ] Internet / ISP connectivity
-- [ ] NAT configuration
-- [ ] DMZ services
 - [ ] Security testing
 - [ ] Full connectivity testing
 - [ ] Network documentation
